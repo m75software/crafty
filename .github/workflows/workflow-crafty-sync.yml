@@ -6,7 +6,8 @@ env:
 
 on:
   schedule:
-    - cron: '1 18 * * *'
+    # run at midnight every day
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -15,7 +16,7 @@ jobs:
     steps:
       - name: Sync GitHub/GitLab upstream Repository changes with this repo
         uses: dabreadman/sync-upstream-repo@v0.1.2.b
-        with: 
+        with:
           upstream_repo: ${{ env.UPSTREAM_URL }}
           branch: ${{ env.DOWNSTREAM_BRANCH }}
           token: ${{ secrets.TDB_PAT }}

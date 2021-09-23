@@ -1,0 +1,24 @@
+# GitHub Action to sync GitHub upstream Repository changes with this repo
+
+name: sync-github-upstream-repo
+
+env:
+  UPSTREAM_URL: "https://gitlab.com/crafty-controller/crafty-web.git"
+  DOWNSTREAM_BRANCH: "master"
+
+# Controls when the action will run.
+on:
+  schedule:
+    - cron: '1 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync GitHub upstream Repository changes with this repo
+        uses: dabreadman/sync-upstream-repo@v0.1.2.b
+        with: 
+          upstream_repo: ${{ env.UPSTREAM_URL }}
+          branch: ${{ env.DOWNSTREAM_BRANCH }}
+          token: ${{ secrets.TDB_PAT }}

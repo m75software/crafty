@@ -1,4 +1,4 @@
-# This is a mirror copy of Crafty, please create PR's on https://gitlab.com/crafty-controller/crafty-web
+# This is a mirror of Crafty, please create PR's on https://gitlab.com/crafty-controller/crafty-web
 
 # Crafty Controller
 > Python based Server Manager / Web Portal for your Minecraft Server

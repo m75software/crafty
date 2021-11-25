@@ -24,5 +24,4 @@ jobs:
           branch: ${{ env.DOWNSTREAM_BRANCH }}
           token: ${{ secrets.TDB_PAT }}
       - name: Prevent GitHub from disabling sync after 60 days
-        uses: actions/checkout@v2
         uses: gautamkrishnar/keepalive-workflow@master

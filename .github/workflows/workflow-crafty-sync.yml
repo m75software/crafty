@@ -23,8 +23,9 @@ jobs:
           upstream_repo: ${{ env.UPSTREAM_URL }}
           branch: ${{ env.DOWNSTREAM_BRANCH }}
           token: ${{ secrets.TDB_PAT }}
-      - name: Prevent GitHub from disabling sync after 60 days
+      - name: Checkout action required as 'keepalive-workflow' needs Git CLI
         uses: binhex/crafty@master
         with:
           gh_token: ${{ secrets.TDB_PAT }}
+      - name: Prevent GitHub from disabling sync after 60 days
         uses: gautamkrishnar/keepalive-workflow@master

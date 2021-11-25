@@ -5,19 +5,16 @@ env:
   DOWNSTREAM_BRANCH: "master"
 
 on:
+  schedule:
+    # run at midnight every day
+    - cron: '0 0 * * *'
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'Enter tag name for test/dev image'
-        default: 'test'
-
-
 
 jobs:
   sync-repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout - required for 'keepalive-workflow'
         uses: actions/checkout@v2
       - name: Sync GitHub/GitLab upstream Repository changes with this repo
         uses: dabreadman/sync-upstream-repo@v0.1.2.b

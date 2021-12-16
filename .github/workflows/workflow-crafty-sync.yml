@@ -33,7 +33,7 @@ jobs:
           upstream_repo: ${{ env.UPSTREAM_URL }}
           upstream_branch: ${{ env.UPSTREAM_BRANCH }}
           downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
-          token: ${{ secrets.WORKFLOW_TOKEN }}
+          token: ${{ env.WORKFLOW_TOKEN }}
           merge_args: ${{ env.MERGE_ARGS }}
           push_args: ${{ env.PUSH_ARGS }}
       - name: Prevent GitHub from disabling sync after 60 days

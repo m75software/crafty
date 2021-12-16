@@ -13,7 +13,7 @@ env:
   # Optional merge arguments
   MERGE_ARGS: "-X theirs"
   # Optional push arguments
-  PUSH_ARGS: "--force"
+  PUSH_ARGS: ""
 
 on:
   schedule:

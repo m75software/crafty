@@ -22,6 +22,6 @@ jobs:
           upstream_repo: ${{ env.UPSTREAM_URL }}
           branch: ${{ env.DOWNSTREAM_BRANCH }}
           token: ${{ secrets.TDB_PAT }}
-          merge_args: -X theirs
+          push_args: --force
       - name: Prevent GitHub from disabling sync after 60 days
         uses: gautamkrishnar/keepalive-workflow@master
